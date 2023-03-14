@@ -3,6 +3,24 @@
   <head>
     <meta charset="utf-8" />
     <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        getVisitCount();
+      })
+
+      const functionApi = "";
+
+      const getVisitCount = () => {
+          let count = 30;
+          fetch(functionApi).then(response => {
+              return response.json()
+          }).then(response => {
+              console.log("Website called getVisitCount API.")
+              count = response.count;
+              document.getElementById('visitor_count').innerText = count;
+          }).catch(function(error){
+            console.log(error)
+          })
+      }
       // fetch('https://102ewhf875.execute-api.us-east-1.amazonaws.com/Prod/put')
       //       .then(() => fetch(' https://102ewhf875.execute-api.us-east-1.amazonaws.com/Prod/get'))
       //       .then(response => response.json())
