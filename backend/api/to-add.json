@@ -1,8 +1,0 @@
-{
-    "Host": {
-        "CORS": "*"
-    }
-}
-
-cd to backend/api and run func host start
-in index.html, copy the function API and store it as functionApi's value
